@@ -1,15 +1,15 @@
 abstract class View<Generico> {
 
-    private _elemento: Element;
+    private _elemento: JQuery;
 
     constructor(seletor: string) {
 
-        this._elemento = document.querySelector(seletor);
+        this._elemento = $(seletor);
     }
 
     update(model: Generico) {
 
-        this._elemento.innerHTML = this.template(model);
+        this._elemento.html(this.template(model));
     }
 
     abstract template(model: Generico): string ;
