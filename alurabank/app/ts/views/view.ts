@@ -1,4 +1,4 @@
-abstract class View<Generico> {
+export abstract class View<Generico> {
 
     private _elemento: JQuery;
 
@@ -12,5 +12,5 @@ abstract class View<Generico> {
         this._elemento.html(this.template(model));
     }
 
-    abstract template(model: Generico): string ;
+    abstract template(model: Generico): string;
 }
