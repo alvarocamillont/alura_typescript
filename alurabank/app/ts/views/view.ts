@@ -1,3 +1,5 @@
+import { logarTempoDeExecucao } from "../helpers/decorator/index";
+
 export abstract class View<Generico> {
 
     protected _elemento: JQuery;
@@ -10,6 +12,7 @@ export abstract class View<Generico> {
         this._escapar = escapar;
     }
 
+    @logarTempoDeExecucao(true)
     update(model: Generico) {
         let template = this.template(model)
         if (this._escapar) {
