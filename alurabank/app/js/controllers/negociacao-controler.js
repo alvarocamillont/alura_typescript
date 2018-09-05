@@ -25,7 +25,7 @@ System.register(["../models/index", "../views/index"], function (exports_1, cont
                 adiciona(event) {
                     event.preventDefault();
                     let data = new Date(this._inputData.val().replace(/-/g, ','));
-                    if (this.ehDiaDaSemana(data)) {
+                    if (this.ehFinaldeSemana(data)) {
                         this._mensagemView.update("Negociações somente em dias úteis da semana.");
                         return;
                     }
@@ -34,13 +34,8 @@ System.register(["../models/index", "../views/index"], function (exports_1, cont
                     this._negociacoesView.update(this._negociacoes);
                     this._mensagemView.update('Negociação adicionada com sucesso!');
                 }
-                ehDiaDaSemana(data) {
-                    if (data.getDay() === DiaDaSemana.Domingo || data.getDay() === DiaDaSemana.Sabado) {
-                        return true;
-                    }
-                    else {
-                        return false;
-                    }
+                ehFinaldeSemana(data) {
+                    return data.getDay() === DiaDaSemana.Domingo || data.getDay() === DiaDaSemana.Sabado;
                 }
             };
             exports_1("NegociacaoController", NegociacaoController);
