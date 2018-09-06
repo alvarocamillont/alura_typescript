@@ -1,7 +1,8 @@
-import { Negociacao } from './Negociacao';
-import { Imprimivel } from './Imprimivel';
+import { MeuObjeto } from "./MeuObjeto";
+import { Negociacao } from "./Negociacao";
 
-export class Negociacoes implements Imprimivel {
+
+export class Negociacoes implements MeuObjeto<Negociacoes> {
 
     private _negociacoes: Negociacao[] = [];
 
@@ -18,5 +19,11 @@ export class Negociacoes implements Imprimivel {
     paraTexto(): void {
         console.log('-- paraTexto --');
         console.log(JSON.stringify(this._negociacoes));
+    }
+
+    // precisamos implementar o método ehIgual
+    ehIgual(negociacoes: Negociacoes): boolean {
+
+        return JSON.stringify(this._negociacoes) == JSON.stringify(negociacoes.paraArray());
     }
 }
