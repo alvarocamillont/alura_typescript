@@ -1,3 +1,3 @@
-export * from './negociacao';
-export * from './negociacoes';
-export * from './negociacaoParcial';
+export * from './Negociacao';
+export * from './Negociacoes';
+export * from './NegociacaoParcial';

@@ -1,4 +1,4 @@
-System.register(["../helpers/decorator/index"], function (exports_1, context_1) {
+System.register(["../helpers/decorators/index"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -22,14 +22,13 @@ System.register(["../helpers/decorator/index"], function (exports_1, context_1) 
                 }
                 update(model) {
                     let template = this.template(model);
-                    if (this._escapar) {
-                        template = template.replace(/<script>[\s\S]*?<\/script>/, '');
-                    }
+                    if (this._escapar)
+                        template = template.replace(/<script>[\s\S]*?<\/script>/g, '');
                     this._elemento.html(template);
                 }
             };
             __decorate([
-                index_1.logarTempoDeExecucao(true)
+                index_1.logarTempoDeExecucao()
             ], View.prototype, "update", null);
             exports_1("View", View);
         }

@@ -1,15 +1,15 @@
-System.register(["./view"], function (exports_1, context_1) {
+System.register(["./View"], function (exports_1, context_1) {
     "use strict";
-    var view_1, NegociacoesView;
+    var View_1, NegociacoesView;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (view_1_1) {
-                view_1 = view_1_1;
+            function (View_1_1) {
+                View_1 = View_1_1;
             }
         ],
         execute: function () {
-            NegociacoesView = class NegociacoesView extends view_1.View {
+            NegociacoesView = class NegociacoesView extends View_1.View {
                 template(model) {
                     return `
         <table class="table table-hover table-bordered">
@@ -23,19 +23,19 @@ System.register(["./view"], function (exports_1, context_1) {
             </thead>
 
             <tbody>
-            ${model.paraArray().map(negociacao => `
-                    <tr>
-                        <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
-                        <td>${negociacao.quantidade}</td>
-                        <td>${negociacao.valor}</td>
-                        <td>${negociacao.volume}</td>
-                    </tr>                        
-                `).join('')}     
+                ${model.paraArray().map(negociacao => `
+                        <tr>
+                            <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() + 1}/${negociacao.data.getFullYear()}</td>
+                            <td>${negociacao.quantidade}</td>
+                            <td>${negociacao.valor}</td>
+                            <td>${negociacao.volume}</td>
+                        <tr>
+                    `).join('')}            
             </tbody>
 
             <tfoot>
             </tfoot>
-        </table>               
+        </table>
         `;
                 }
             };

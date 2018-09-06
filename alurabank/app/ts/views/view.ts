@@ -1,10 +1,9 @@
-import { logarTempoDeExecucao } from "../helpers/decorator/index";
+import { logarTempoDeExecucao } from '../helpers/decorators/index';
 
-export abstract class View<Generico> {
+export abstract class View<T> {
 
     protected _elemento: JQuery;
     private _escapar: boolean;
-
 
     constructor(seletor: string, escapar: boolean = false) {
 
@@ -12,14 +11,15 @@ export abstract class View<Generico> {
         this._escapar = escapar;
     }
 
-    @logarTempoDeExecucao(true)
-    update(model: Generico) {
-        let template = this.template(model)
-        if (this._escapar) {
-            template = template.replace(/<script>[\s\S]*?<\/script>/, '')
-        }
+    @logarTempoDeExecucao()
+    update(model: T) {
+
+        let template = this.template(model);
+        if(this._escapar)
+            template = template.replace(/<script>[\s\S]*?<\/script>/g, '');
         this._elemento.html(template);
     }
 
-    abstract template(model: Generico): string;
+    abstract template(model: T): string;
+
 }

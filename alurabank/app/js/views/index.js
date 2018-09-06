@@ -1,4 +1,4 @@
-System.register(["./view", "./mensagemView", "./negociacoesView"], function (exports_1, context_1) {
+System.register(["./View", "./MensagemView", "./NegociacoesView"], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     function exportStar_1(m) {
@@ -10,14 +10,14 @@ System.register(["./view", "./mensagemView", "./negociacoesView"], function (exp
     }
     return {
         setters: [
-            function (view_1_1) {
-                exportStar_1(view_1_1);
+            function (View_1_1) {
+                exportStar_1(View_1_1);
             },
-            function (mensagemView_1_1) {
-                exportStar_1(mensagemView_1_1);
+            function (MensagemView_1_1) {
+                exportStar_1(MensagemView_1_1);
             },
-            function (negociacoesView_1_1) {
-                exportStar_1(negociacoesView_1_1);
+            function (NegociacoesView_1_1) {
+                exportStar_1(NegociacoesView_1_1);
             }
         ],
         execute: function () {

@@ -1,3 +1,3 @@
-export * from './view';
-export * from './mensagemView';
-export * from './negociacoesView';
+export * from './View';
+export * from './MensagemView';
+export * from './NegociacoesView';
