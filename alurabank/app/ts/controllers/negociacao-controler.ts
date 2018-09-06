@@ -1,7 +1,7 @@
 import { NegociacaoParcial } from './../models/negociacaoParcial';
 import { Negociacoes, Negociacao } from "../models/index";
 import { NegociacoesView, MensagemView } from "../views/index";
-import { domInject } from "../helpers/decorator/index";
+import { domInject, throttle } from "../helpers/decorator/index";
 
 
 export class NegociacaoController {
@@ -45,7 +45,8 @@ export class NegociacaoController {
     private ehFinaldeSemana(data: Date): boolean {
         return data.getDay() === DiaDaSemana.Domingo || data.getDay() === DiaDaSemana.Sabado
     }
-
+    
+    @throttle()
     importarDados() {
 
         function isOk(res:Response){
