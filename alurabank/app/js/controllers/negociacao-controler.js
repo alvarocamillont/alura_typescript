@@ -43,6 +43,9 @@ System.register(["../models/index", "../views/index", "../helpers/decorator/inde
                 ehFinaldeSemana(data) {
                     return data.getDay() === DiaDaSemana.Domingo || data.getDay() === DiaDaSemana.Sabado;
                 }
+                importarDados() {
+                    alert('oi');
+                }
             };
             __decorate([
                 index_3.domInject('#data')
